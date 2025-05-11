@@ -108,6 +108,11 @@ QEMU images, and Monarch source code.
 ./scripts/complete-cfg.sh
 ```
 
+And a linux configuration is necessary：
+```bash
+sudo sysctl vm.overcommit_memory=1
+```
+
 Now, pick up one of the configurations and run Monarch with it. For example,
 ```bash
 $ sudo ./src/bin/syz-manager -config fuzz-config/eval-config/non-fault-mode/nfs/nfs-c-normal.cfg
@@ -126,7 +131,9 @@ If you can see the `executed xxx` from the terminal,
 it means the Monarch is running successfully.
 Now, you can continue the following evaluations.
 
-> **Note**: Once you start a fuzzing instance, it keeps running until you manually stop (CTRL+C or KILL) it.
+> **Note1**: Once you start a fuzzing instance, it keeps running until you manually stop (CTRL+C or KILL) it.
+
+> **Note2**: Users can add '-debug' in the starting fuzzing command to see detailed debug information in case of issues in running the fuzzer.
 
 ### Bug-finding (Section 5.1)
 
