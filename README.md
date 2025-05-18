@@ -135,6 +135,8 @@ Now, you can continue the following evaluations.
 
 > **Note2**: Users can add '-debug' in the starting fuzzing command to see detailed debug information in case of issues in running the fuzzer.
 
+> **Note3**: When debug prints "Connection refused", please check the IP address of br0 with ifconfig. It should be 192.168.0.1/24. A specific unkown procedure changes the IP periodically, so users should check the IP address often.
+
 ### Bug-finding (Section 5.1)
 
 As we discussed in the *"Bug characteristics"* paragraph in Section 5.1,
